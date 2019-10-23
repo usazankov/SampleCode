@@ -4,6 +4,8 @@ import io.reactivex.Observable
 import ru.sample.data.entity.BankManifestEntity
 import ru.sample.data.entity.FullBankEntity
 import ru.sample.data.entity.ShortBankEntity
+import ru.sample.data.net.SoftPosApi
+import javax.inject.Inject
 
 interface IBankDataStore{
     fun listBanks(): Observable<List<ShortBankEntity>>
@@ -11,17 +13,18 @@ interface IBankDataStore{
     fun bankManifest(bankId: Int): Observable<BankManifestEntity>
 }
 
-class CloudBankDataStore : IBankDataStore {
+class CloudBankDataStore @Inject constructor(val api: SoftPosApi) : IBankDataStore {
+
     override fun listBanks(): Observable<List<ShortBankEntity>> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return api.listBanks()
     }
 
     override fun bankDescription(bankId: Int): Observable<FullBankEntity> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return api.bankDescription(bankId)
     }
 
     override fun bankManifest(bankId: Int): Observable<BankManifestEntity> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return api.bankManifest(bankId)
     }
 
 }
