@@ -11,7 +11,7 @@ class DataModule {
 
     @Provides
     @Singleton
-    internal fun provideBanksCache(banksCache: BanksCacheImpl): IBanksCache {
+    fun provideBanksCache(banksCache: BanksCacheImpl): IBanksCache {
         return banksCache
     }
 }
