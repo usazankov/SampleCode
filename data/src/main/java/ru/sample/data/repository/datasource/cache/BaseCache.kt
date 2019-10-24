@@ -11,7 +11,7 @@ abstract class BaseCache(
     protected val fileManager: FileManager,
     protected val threadExecutor: ThreadExecutor,
     private val settingsKey: String
-) {
+) : ICache {
     private var expirationTime: Long = 0
 
     protected var cacheDir: File
@@ -21,30 +21,29 @@ abstract class BaseCache(
         private val DEFAULT_EXPIRATION_TIME = (120 * 1000).toLong()
     }
 
-    val isExpired: Boolean
-        get() {
-            val currentTime = System.currentTimeMillis()
-            val lastUpdateTime = this.lastCacheUpdateTimeMillis
+    override fun isExpired(): Boolean {
+        val currentTime = System.currentTimeMillis()
+        val lastUpdateTime = this.lastCacheUpdateTimeMillis
 
-            if (expirationTime == 0L) return false
+        if (expirationTime == 0L) return false
 
-            val expired = currentTime - lastUpdateTime > expirationTime
+        val expired = currentTime - lastUpdateTime > expirationTime
 
-            if (expired) {
-                this.evictAll()
-            }
-
-            return expired
+        if (expired) {
+            this.evictAll()
         }
+
+        return expired
+    }
 
     /**
      * Get in millis, the last time the cache was accessed.
      */
     protected val lastCacheUpdateTimeMillis: Long
-        get() = this.fileManager?.getFromPreferences(
+        get() = this.fileManager.getFromPreferences(
             context, SETTINGS_FILE_NAME,
             settingsKey
-        ) ?: 0
+        )
 
     init {
         this.cacheDir = context.cacheDir
@@ -55,7 +54,7 @@ abstract class BaseCache(
         expirationTime = time
     }
 
-    fun evictAll() {
+    override fun evictAll() {
         executeAsynchronously(CacheEvictor(fileManager, cacheDir))
     }
 

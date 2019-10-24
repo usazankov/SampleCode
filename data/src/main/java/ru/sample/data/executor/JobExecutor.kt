@@ -9,7 +9,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class JobExecutor @Inject constructor(): ThreadExecutor{
+class JobExecutor @Inject constructor() : ThreadExecutor {
     private val threadExecutor: ThreadPoolExecutor = ThreadPoolExecutor(
         3,
         5,

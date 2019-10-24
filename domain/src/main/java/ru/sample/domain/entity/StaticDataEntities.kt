@@ -1,4 +1,4 @@
-package ru.sample.data.entity
+package ru.sample.domain.entity
 
 import com.google.gson.annotations.SerializedName
 import ru.sample.data.entity.enums.ETypeInputField

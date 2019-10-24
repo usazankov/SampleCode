@@ -3,10 +3,10 @@ package ru.sample.data.net
 import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Path
-import ru.sample.data.entity.BankManifestEntity
-import ru.sample.data.entity.FullBankEntity
-import ru.sample.data.entity.ServiceDescriptionEntity
-import ru.sample.data.entity.ShortBankEntity
+import ru.sample.domain.entity.BankManifestEntity
+import ru.sample.domain.entity.FullBankEntity
+import ru.sample.domain.entity.ServiceDescriptionEntity
+import ru.sample.domain.entity.ShortBankEntity
 
 interface SoftPosApi {
 

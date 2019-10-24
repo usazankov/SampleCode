@@ -11,11 +11,12 @@ import org.junit.runner.RunWith
 import org.mockito.runners.MockitoJUnitRunner
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import ru.sample.data.entity.FullBankEntity
-import ru.sample.data.entity.ItemTariff
-import ru.sample.data.entity.ServiceDescriptionEntity
-import ru.sample.data.entity.ShortBankEntity
+
 import ru.sample.data.net.SoftPosApi
+import ru.sample.domain.entity.FullBankEntity
+import ru.sample.domain.entity.ItemTariff
+import ru.sample.domain.entity.ServiceDescriptionEntity
+import ru.sample.domain.entity.ShortBankEntity
 import java.util.concurrent.TimeUnit
 
 
