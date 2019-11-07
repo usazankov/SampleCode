@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:drawable="@drawable/sm_shape_btn_disabled_rounded"
+        android:state_enabled="false"
+        />
+
+    <item
+        android:drawable="@drawable/shape_btn_rounded_white" />
+
+</selector>

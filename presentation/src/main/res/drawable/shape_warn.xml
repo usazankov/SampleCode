@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape
+            android:shape="oval">
+            <solid
+                android:color="#FFD23F"/>
+            <size
+                android:width="28.5dp"
+                android:height="28.5dp"/>
+        </shape>
+    </item>
+    <item
+        android:drawable="@drawable/vector_warn"
+        android:gravity="center"
+        android:height="18dp"
+        android:width="5dp">
+    </item>
+</layer-list>

@@ -1,11 +1,329 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme"/>
+
+
+
+    <!--style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    </style-->
+
+    <style name="navigationViewStyle">@style/Widget.Design.NavigationView</style>
+
+    <style name="AppTheme.ProgressBar">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:visibility">visible</item>
+    </style>
+
+    <style name="AppTheme.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="AppTheme.TextViewHeader">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/header_margin</item>
+        <item name="android:textSize">@dimen/header_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="AppTheme.TextViewTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/header_margin</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="BankCardViewStyle">
+        <item name="cardCornerRadius">12dp</item>
+        <item name="contentPaddingBottom">10dp</item>
+        <item name="contentPaddingTop">10dp</item>
+        <item name="contentPaddingLeft">10dp</item>
+        <item name="contentPaddingRight">10dp</item>
+        <item name="cardElevation">0dp</item>
+    </style>
+
+    <style name="CardViewStyleDocs">
+        <item name="cardCornerRadius">32dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="contentPaddingBottom">5dp</item>
+        <item name="contentPaddingTop">5dp</item>
+        <item name="contentPaddingLeft">5dp</item>
+        <item name="contentPaddingRight">5dp</item>
+    </style>
+
+    <style name="ErrorText" parent="TextAppearance.Design.Error">
+        <item name="android:textColor">@color/errorColor</item>
+        <item name="android:gravity">end</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="HintText" parent="TextAppearance.Design.Hint">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextInputLayoutAppearance" parent="Widget.Design.TextInputLayout">
+         <!--reference our hint & error styles -->
+        <item name="hintTextAppearance">@style/HintText</item>
+        <item name="errorTextAppearance">@style/ErrorText</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:textColorHint">@color/textColorHint</item>
+        <item name="colorControlNormal">@color/textColorHint</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
+    </style>
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar" >
         <!-- Customize your theme here. -->
+        <item name="colorAccent">@color/colorAccent</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:navigationBarColor">@color/colorPrimaryDark</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_back1</item>
+    </style>
+
+    <style name="AppBarStyle">
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:contentInsetStart">0dp</item>
+    </style>
+
+    <style name="ToolBarStyle"/>
+
+
+    <style name="AppBaseTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat" />
+
+    <style name="AppBaseTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="LongLine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:background">@drawable/line</item>
+    </style>
+
+    <style name="RoundedButtonBlue">
+        <item name="android:background">@drawable/dialog_btn_rounded_blue</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:elevation">2dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="RoundedButtonGreen">
+        <item name="android:background">@drawable/dialog_btn_rounded_green</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:elevation">2dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="RoundedButtonWhite" parent="RaisedButton">
+        <item name="android:background">@drawable/dialog_btn_rounded_white</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:elevation">2dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="RoundCrossButton">
+        <item name="android:background">@null</item>
+        <item name="android:src">@drawable/btn_cross_red</item>
+    </style>
+
+    <style name="RoundCrossButtonDisabled">
+        <item name="android:background">@null</item>
+        <item name="android:src">@drawable/btn_cross_inactive</item>
+    </style>
+
+    <style name="FlatDialog">
+        <item name="android:background">@drawable/sm_flat_btn_rounded</item>
+        <item name="android:textColor">#0074D4</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+    </style>
+
+    <style name="RefTextView">
+        <item name="android:textColor">@drawable/flatbutton_drw</item>
+        <item name="android:textSize">@dimen/ref_tv_size</item>
+    </style>
+
+    <style name="FlatButton">
+        <item name="android:background">@null</item>
+        <item name="android:textColor">@drawable/flatbutton_drw</item>
+        <item name="android:textSize">@dimen/btn_flat</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="AddButton">
+        <item name="android:background">@null</item>
+        <item name="android:src">@drawable/add_button</item>
+    </style>
+
+    <style name="FlatButtonDisabled">
+        <item name="android:background">@null</item>
+        <item name="android:textSize">@dimen/btn_flat</item>
+        <item name="android:textColor">@color/buttonDisabledTextColor</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+    </style>
+
+
+    <style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+    </style>
+
+    <style name="CardViewStyleDialog">
+        <item name="cardCornerRadius">26dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="contentPaddingBottom">20dp</item>
+        <item name="contentPaddingTop">20dp</item>
+        <item name="contentPaddingLeft">20dp</item>
+        <item name="contentPaddingRight">20dp</item>
+    </style>
+
+    <style name="AlertDialog.AppCompat.CircleBackground">
+        <item name="android:background">@drawable/dialog_circle</item>
+    </style>
+
+
+    <style name="MainLayout">
+        <item name="android:background">@color/background</item>
+    </style>
+
+    <style name="ContentLayout">
+        <item name="android:background">@drawable/shape_content</item>
+    </style>
+
+    <style name="ContentLayoutPadded">
+        <item name="android:background">@drawable/shape_content_padded</item>
+    </style>
+
+    <style name="ContentLayoutStroke">
+        <item name="android:background">@drawable/shape_content_stroke</item>
+    </style>
+
+    <style name="AppCompDialog" parent="AppBaseTheme" >
+        <item name="android:background">@android:color/transparent</item>
+        <!--item name="android:windowTranslucentStatus">false</item-->
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTabLayout" parent="Widget.Design.TabLayout">
+<!--        <item name="tabMaxWidth">@dimen/tab_max_width</item>-->
+        <item name="tabIndicatorColor">?attr/colorAccent</item>
+        <item name="tabIndicatorHeight">0dp</item>
+<!--        <item name="tabPaddingStart">6dp</item>-->
+<!--        <item name="tabPaddingEnd">6dp</item>-->
+        <item name="tabBackground">@android:color/transparent</item>
+        <item name="tabTextAppearance">@style/AppTabTextAppearance</item>
+        <item name="tabSelectedTextColor">@color/titleTextColor</item>
+    </style>
+
+    <style name="AppTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">@dimen/font_size_body_Description</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/subTextColor</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <!-- Typography-->
+
+    <style name="BrandTitle">
+        <item name="android:textSize">@dimen/font_size_brand_title</item>
+        <item name="android:textColor">@color/titleTextColor</item>
+    </style>
+
+    <style name="ExtendTitle">
+        <item name="android:textSize">@dimen/font_size_extend_title</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textColor">@color/titleTextColor</item>
+    </style>
+
+    <style name="DialogTitle">
+        <item name="android:textSize">@dimen/font_size_dialog_title</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/titleTextColor</item>
+    </style>
+
+    <style name="Title">
+        <item name="android:textSize">@dimen/font_size_title</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/titleTextColor</item>
+    </style>
+
+    <style name="MainList">
+        <item name="android:textSize">@dimen/font_size_main_list</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/titleTextColor</item>
+    </style>
+
+    <style name="TextButton">
+        <item name="android:textSize">@dimen/font_size_text_button</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="BodyDescription">
+        <item name="android:textSize">@dimen/font_size_body_Description</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/titleTextColor</item>
+    </style>
+
+    <style name="RaisedButton">
+        <item name="android:textSize">@dimen/font_size_raised_button</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="SubHeader">
+        <item name="android:textSize">@dimen/font_size_sub_header</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="SubList">
+        <item name="android:textSize">@dimen/font_size_sub_list</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+
+    <style name="TextLogo">
+        <item name="android:textColor">#172E9D</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="DlgDocUploadText" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:background">@null</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="TextInstallation">
+        <item name="android:textSize">16sp</item>
     </style>
 
 </resources>

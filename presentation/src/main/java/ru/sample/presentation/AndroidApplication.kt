@@ -4,6 +4,7 @@ import android.app.Application
 import android.util.Log
 import io.reactivex.plugins.RxJavaPlugins
 import ru.sample.presentation.internal.di.components.ApplicationComponent
+import ru.sample.presentation.internal.di.components.DaggerApplicationComponent
 import ru.sample.presentation.internal.di.modules.ApplicationModule
 
 class AndroidApplication : Application() {
@@ -21,11 +22,12 @@ class AndroidApplication : Application() {
             Log.d("RX", "error: " + it.message)
             it.printStackTrace()
         }
+        initializeInjector()
     }
 
     private fun initializeInjector() {
-//        this.applicationComponent = DaggerApplicationComponent.builder()
-//            .applicationModule(ApplicationModule(this))
-//            .build()
+        this.applicationComponent = DaggerApplicationComponent.builder()
+            .applicationModule(ApplicationModule(this))
+            .build()
     }
 }

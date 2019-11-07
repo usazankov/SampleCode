@@ -10,7 +10,7 @@ ext {
   versionNameApp = "1.0.0"
 
   //Android
-  androidMinSdkVersion = 15
+  androidMinSdkVersion = 21
   androidTargetSdkVersion = 29
   androidCompileSdkVersion = 29
 

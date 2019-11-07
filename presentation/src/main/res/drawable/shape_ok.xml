@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape
+            android:shape="oval">
+            <solid
+                android:color="#15B76D"/>
+            <size
+                android:width="28.5dp"
+                android:height="28.5dp"/>
+        </shape>
+    </item>
+    <item
+        android:drawable="@drawable/vector_ok"
+        android:gravity="center"
+        android:height="10.5dp"
+        android:width="14dp">
+    </item>
+</layer-list>

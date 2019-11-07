@@ -11,7 +11,7 @@ interface IBanksCache : ICache{
      *
      * @param bankId The bank id to retrieve data.
      */
-    fun getBank(bankId: Int): Observable<FullBankEntity>
+    fun getBank(bankId: Int?): Observable<FullBankEntity>
 
     /**
      * Gets an [Observable] which will emit a [FullBankEntity].
@@ -40,7 +40,7 @@ interface IBanksCache : ICache{
      * @param bankId The id used to look for inside the cache.
      * @return true if the element is cached, otherwise false.
      */
-    fun isCached(bankId: Int): Boolean
+    fun isCached(bankId: Int?): Boolean
 
     /**
      * Checks if an element (bank) exists in the cache.

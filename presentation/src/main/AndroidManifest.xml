@@ -6,9 +6,25 @@
     <application
         android:name=".AndroidApplication"
         android:allowBackup="true"
+        android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" />
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="ru.sample.presentation.view.activity.MainActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name="ru.sample.presentation.view.activity.SelectBankActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
 </manifest>

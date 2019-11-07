@@ -1,3 +1,137 @@
 <resources>
-    <string name="app_name">SampleCode</string>
+    <string name="app_name">softPOS Registration</string>
+    <string name="url">http://www.android10.org/</string>
+
+    <string name="activity_title_user_list">Users List</string>
+    <string name="activity_title_user_details">User Details</string>
+
+    <string name="btn_text_load_data">Load Sample Data</string>
+    <string name="btn_text_retry">Retry</string>
+
+    <string name="view_text_email">Email:</string>
+    <string name="view_text_followers">Followers:</string>
+    <string name="view_text_description">Description:</string>
+
+    <string name="string_content_description">Non accessible view</string>
+
+    //Exception messages
+    <string name="exception_message_generic">Error loading data</string>
+    <string name="exception_message_no_connection">There is no internet connection</string>
+    <string name="exception_message_user_not_found">Cannot retrieve user data. Check your internet connection</string>
+
+    //Install actions description
+    <string name="check_license">Check license</string>
+    <string name="attestation">Attestation</string>
+    <string name="create_container">Create container</string>
+    <string name="get_admin_rights">Get admin rights</string>
+    <string name="set_container_policy">Set container policy</string>
+    <string name="set_device_policy">Set device policy</string>
+    <string name="load_applications">Load applications</string>
+    <string name="install_applications">Install applications</string>
+    <string name="launch_payment_application">Configure payment application</string>
+
+    <!-- Common error Codes -->
+    <string name="err_unknown_error">Unknown error encountered.</string>
+    <string name="err_internal">Internal error</string>
+    <string name="err_tamper">Phone security error. (Error code: %d)\nApplication will be closed.</string>
+
+    <string name="error_load">Ошибка при загрузке данных. \n Повторите попытку позже</string>
+    <string name="try_again">Повторите попытку позже</string>
+    <string name="err_install_app">Install application error - </string>
+
+    <!-- License key error Codes -->
+    <string name="err_license_internal_server">Internal server error</string>
+    <string name="err_licence_invalid_license">Invalid license</string>
+    <string name="err_license_invalid_package_name">Invalid package name</string>
+    <string name="err_license_licence_terminated">License terminated</string>
+    <string name="err_license_network_disconnected">Network disconnected</string>
+    <string name="err_license_network_general">Network general error</string>
+    <string name="err_license_unknown">Error unknown</string>
+    <string name="err_license_code_unknown">Error code unknown %1$s, status %2$s</string>
+    <string name="err_license_not_current_date">Not current date</string>
+    <string name="err_license_sig_mismatch">Caller package signature mismatch</string>
+    <string name="err_license_ver_code_mismatch">Caller package version code mismatch</string>
+    <string name="err_license_null_params">NULL params</string>
+    <string name="err_license_user_disagrees_license_agreement">User disagrees EULA</string>
+
+    <!-- Create container error Codes -->
+    <string name="err_container_create">Create container error: </string>
+    <string name="err_container_filesystem">Error: Not enough memory or problem encountered during Knox file system creation.</string>
+    <string name="err_container_no_admin_apk">Error: Invalid or non-existent admin passed as parameter.</string>
+    <string name="err_container_max_limit_reached">Error: Max number of containers reached. Cannot create more than 2 containers in a device.</string>
+    <string name="err_container_internal">Error: Internal error encountered.</string>
+    <string name="err_container_creation_in_progress">Error: Other container creation already in progress. Please complete the other process before starting a new one.</string>
+    <string name="err_container_cancelled">Container creation cancelled.</string>
+    <string name="err_container_not_found">No containers found.</string>
+    <string name="failed_to_load_application">Failed to load application</string>
+    <string name="failed_to_attestate_device">Failed to attestate the device</string>
+
+    <string name="msg_no_connect">Your phone is not connected to the Internet.\nCheck the connection and try again</string>
+    <string name="error">Error</string>
+
+    <string name="retry">To retry</string>
+    <string name="next">Next</string>
+
+    <string name="err_no_internet">Your phone is not connected to the Internet. Check connection and try again.</string>
+    <string name="err_server_not_available">Server is not available</string>
+    <string name="err_server_error">Server error</string>
+    <string name="BankChoice"><u>Выбрать</u></string>
+
+    <!-- Titles -->
+    <string name="title_list_banks">Bank List</string>
+
+    <!-- Prompt messages -->
+    <string name="prompt_select_bank">Choose\nbank</string>
+
+    <string name="select_this_bank">Выбрать этот банк</string>
+
+
+    <!-- Service description -->
+    <string name="srv_dsc_text_logo" translatable="false">Business</string>
+    <string name="srv_dsc_logo_separator" translatable="false">|</string>
+    <string name="srv_dsc_connect">Подключить</string>
+
+    <string name="cond_accept_service"><u>я ознакомился с условиями оферты и принимаю их</u></string>
+    <string name="cond_continue">Продолжить</string>
+    <string name="cond_toolbar_prompt">Публичная\nоферта</string>
+    <string name="cond_toolbar_title">Публичная оферта</string>
+
+
+    <string name="docdet_save"><u>Сохранить</u></string>
+    <string name="docdet_doc4load">Загрузка %s</string>
+    <string name="docdet_action_desc">Выберите с устройства или сфотографируйте</string>
+    <string name="docdet_action_desc_plus">Выберите с устройства или сфотографируйте\nВы можете добавить %d документов</string>
+
+    <string name="ext_tariffs">Detailed tariff conditions</string>
+    <string name="dlgdocupl_snapshot">Сделать\nснимок</string>
+    <string name="dlgdocupl_upload_doc">Загрузить\nфайл</string>
+    <string name="dlgdocupl_upload_img">Загрузить изображение</string>
+
+    <string name="prompt_reg">Registration</string>
+    <string name="prompt_docs">Load Documents</string>
+
+    <string name="load_docs">Загрузка документов</string>
+
+    <string name="profile_reg">Registration Form</string>
+
+    <string name="sub_req_fields">Fields marked with <font color='#F64141'>*</font>\n are required</string>
+
+    <string name="send_request">Send request</string>
+
+    <string name="request_submitted">Request submitted</string>
+
+    <string name="your_request_submitted">Your request submitted to</string>
+    <string name="comp_installation_title">Component installation</string>
+
+    <string name="stop_service_title">Unregister</string>
+
+    <string name="kc_main_text">Осталось чуть-чуть</string>
+    <string name="kc_msg_payapp_error">Приложение готово к работе, но пока не удалось автоматически авторизоваться в кассовом приложении.</string>
+    <string name="kc_btn_retry">Повторить попытку авторизации</string>
+    <string name="kc_btn_update">Обновить\nприложение</string>
+    <string name="kc_btn_2payapp">Перейти в кассу</string>
+    <string name="kc_btn_unistall">Прекратить пользование сервисом и отменить регистрацию</string>
+    <string name="kc_msg_user_info">Пожалуйста, повторите попытку авторизации, перейдите в кассу для авторизации вручную или обратитесь в службу технической поддержки по телефону %s</string>
+
+
 </resources>

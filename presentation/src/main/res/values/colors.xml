@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#F2F2F2</color>
+    <color name="colorPrimaryDark">#F2F2F2</color>
+    <color name="colorAccent">#0074D4</color>
+
+    <color name="errorColor">#fd1b17</color>
+    <color name="textColor">#000000</color>
+    <color name="textColorHint">#656565</color>
+
+    <color name="buttonTextColor">#0074D4</color>
+    <color name="buttonDisabledTextColor">#A0A0A0</color>
+    <color name="buttonBackgroundColor">#0074D4</color>
+    <color name="buttonColorRipple">#01427C</color>
+    <color name="buttonDisabledColor">#DEDEDE</color>
+
+    <color name="background">#F2F2F2</color>
+    <color name="lightBackground">#FAFAFA</color>
+
+    <color name="amountTextColor">#0074D4</color>
+    <color name="amountSuspectTextColor">#004C8F</color>
+
+    <color name="phoneTextColor">#0074D4</color>
+    <color name="phoneSuspectTextColor">#004C8F</color>
+
+    <color name="dialogBaseColor">#FAFAFA</color>
+    <color name="dialogInfoBackgroundColor">#0074D4</color>
+    <color name="dialogSuccessBackgroundColor">#15b76d</color>
+    <color name="dialogProgressBackgroundColor">#59a4ff</color>
+    <color name="dialogErrorBackgroundColor">#f55b5b</color>
+    <color name="dialogWarningBackgroundColor">#ffd23f</color>
+
+    <color name="dialogNoticeBackgroundColor">#CBF3DE</color>
+    <color name="dialogNoticeTextColor">#000000</color>
+
+    <color name="divider">#bdbdbd</color>
+
+    <color name="activeRoundedButton">#15B76D</color>
+    <color name="activeRoundedButtonLighter">#8AE7B4</color>
+
+    <color name="ripple">#bfbfbf</color>
+
+    <color name="background_pb">#caffffff</color>
+
+    <color name="titleTextColor">#272727</color>
+
+    <color name="defaultColorItemBank">#F2F2F2</color>
+
+    <color name="strokeColor">#A0A0A0</color>
+
+    <color name="subTextColor">#A0A0A0</color>
+
 </resources>
