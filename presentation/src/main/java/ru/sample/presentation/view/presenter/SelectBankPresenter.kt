@@ -50,6 +50,11 @@ class SelectBankPresenter : BasePresenter<SelectBankView>() {
         viewState.showRetry("Ошибка")
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        getBankList.dispose()
+    }
+
     private inner class GetBankListObserver : DisposableObserver<List<ShortBankEntity>>() {
 
         override fun onComplete() {
