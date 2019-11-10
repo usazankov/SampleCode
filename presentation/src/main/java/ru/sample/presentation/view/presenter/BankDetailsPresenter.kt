@@ -21,18 +21,18 @@ class BankDetailsPresenter @Inject constructor() : BasePresenter<BankDetailsView
 
     private val disposables: CompositeDisposable = CompositeDisposable()
 
+    init {
+        component.inject(this)
+    }
 
     /**
      * Initializes the presenter.
      */
     fun initialize(bankId: Int) {
-//        this.hideViewRetry()
-//        this.showViewLoading()
-//        getBankList.buildUseCaseObservable(null)
-//            .subscribeOn(Schedulers.io())
-//            .observeOn(AndroidSchedulers.mainThread())
-//            .subscribe(GetBankListObserver())
-//
+        this.hideViewRetry()
+        this.showViewLoading()
+        getBankList.execute(GetBankListObserver(), null)
+
 //        val disposable = bankDetailsView!!.changeBankId()
 //            .observeOn(AndroidSchedulers.mainThread())
 //            .doOnNext(Consumer<Any> { stateBankId ->
@@ -64,12 +64,12 @@ class BankDetailsPresenter @Inject constructor() : BasePresenter<BankDetailsView
     }
 
     fun initBankDetails(bankId: Int) {
-//        getBankDetails.execute(GetDetailtBankObserver(), GetBankDetails.Params.forBankId(bankId))
-//        //        Disposable disposable = getBankDetails.buildUseCaseObservable(GetBankDetails.Params.forBankId(bankId))
-//        //                .lastElement()
-//        //                .subscribeOn(Schedulers.io())
-//        //                .observeOn(AndroidSchedulers.mainThread())
-//        //                .subscribe(fullBankEntity -> bankDetailsView.renderBankDetails(fullBankEntity));
+        getBankDetails.execute(GetDetailtBankObserver(), GetBankDetails.Params.forBankId(bankId))
+//                Disposable disposable = getBankDetails.buildUseCaseObservable(GetBankDetails.Params.forBankId(bankId))
+//                        .lastElement()
+//                        .subscribeOn(Schedulers.io())
+//                        .observeOn(AndroidSchedulers.mainThread())
+//                        .subscribe(fullBankEntity -> bankDetailsView.renderBankDetails(fullBankEntity));
 
     }
 
@@ -129,11 +129,11 @@ class BankDetailsPresenter @Inject constructor() : BasePresenter<BankDetailsView
         }
 
         override fun onComplete() {
-            hideViewLoading()
+            viewState.hideLoadBankDetails()
         }
 
         override fun onError(exception: Throwable) {
-            hideViewLoading()
+            viewState.hideLoadBankDetails()
             showViewRetry(exception)
         }
     }

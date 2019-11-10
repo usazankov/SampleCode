@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/rl_bank_details"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        style="@style/AppBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/ToolBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_tool_bar"
+            android:minHeight="@dimen/height_tool_bar"
+            app:title="Action" />
+    </com.google.android.material.appbar.AppBarLayout >
+
+    <FrameLayout
+        android:id="@+id/fl_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rl_bottom"
+        android:layout_alignParentTop="true">
+
+        <RelativeLayout
+            android:id="@+id/rl_pager"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_gravity="top">
+
+            <ru.sample.presentation.view.gradationpager.GradationViewPager
+                android:id="@+id/gradationViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_tariffs"
+            style="@style/ContentLayoutStroke"
+            android:paddingStart="@dimen/content_layout_padding"
+            android:paddingEnd="@dimen/content_layout_padding"
+            android:layout_width="match_parent"
+            android:layout_height="360dp"
+            android:layout_gravity="bottom">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_tariffs"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </androidx.recyclerview.widget.RecyclerView>
+            <include
+                layout="@layout/view_progress_small"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_alignParentBottom="true">
+
+        <ru.sample.presentation.view.gradationpager.InfiniteTabLayout
+            android:id="@+id/tabBanks"
+            style="@style/AppTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btn_select_bank"
+            app:tabGravity="center"
+            app:tabMode="scrollable"
+            app:tabRippleColor="@null">
+
+        </ru.sample.presentation.view.gradationpager.InfiniteTabLayout>
+
+        <Button
+            android:id="@+id/btn_select_bank"
+            style="@style/RoundedButtonBlue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/select_this_bank" />
+    </RelativeLayout>
+
+    <include
+        layout="@layout/view_progress"
+        android:visibility="gone" />
+
+</RelativeLayout>

@@ -7,6 +7,7 @@ import ru.sample.presentation.internal.di.modules.ApplicationModule
 import ru.sample.presentation.internal.di.modules.SoftPosModule
 import ru.sample.presentation.view.activity.BaseActivity
 import ru.sample.presentation.view.activity.MainActivity
+import ru.sample.presentation.view.presenter.BankDetailsPresenter
 import ru.sample.presentation.view.presenter.SelectBankPresenter
 import javax.inject.Singleton
 
@@ -26,6 +27,6 @@ interface ApplicationComponent {
 
     //Presenters
     fun inject(selectBankPresenter: SelectBankPresenter)
-
+    fun inject(bankDetailsPresenter: BankDetailsPresenter)
 
 }

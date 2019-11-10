@@ -45,6 +45,10 @@ class SelectBankPresenter : BasePresenter<SelectBankView>() {
         viewState.hideLoading()
     }
 
+    fun selectBank(shortBankEntity: ShortBankEntity){
+        viewState.viewBankDetails(shortBankEntity)
+    }
+
     private fun showViewRetry(throwable: Throwable) {
         //val message = ErrorMessageFactory.create(throwable)
         viewState.showRetry("Ошибка")

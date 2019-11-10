@@ -12,7 +12,7 @@ data class ServiceDescriptionEntity(
 )
 
 data class ShortBankEntity(
-    val id: Int? = null,
+    val id: Int,
     val fullName: String = "",
     val shortName: String = "",
     val coverUrl: String = "",
@@ -21,13 +21,13 @@ data class ShortBankEntity(
 )
 
 data class FullBankEntity(
-    val id: Int? = null,
+    val id: Int,
     val fullName: String = "",
     val shortName: String = "",
     val coverUrl: String = "",
     val color: String = "",
     val smallIconUrl: String = "",
-    val tariffs: List<ItemTariff> = ArrayList(0),
+    val tariffs: MutableList<ItemTariff> = mutableListOf(),
     val urlFullTariffs: String = "",
     val textFullTariffs: String = "",
     val offer: String = ""
@@ -54,7 +54,7 @@ data class PersonalDataConfEntity(
 )
 
 data class InputFieldEntity(
-    val id: Int? = null,
+    val id: Int,
     val typeInputField: ETypeInputField? = null,
     val name: String = "",
     val description: String = "",
@@ -70,7 +70,7 @@ data class DocumentsDataConfEntity(
 )
 
 data class DocumentItemEntity(
-    val id: Int? = null,
+    val id: Int,
     @SerializedName("short_name") val shortName: String = "",
     @SerializedName("full_name") val fullName: String = "",
     val maxCountFiles: Int? = null,

@@ -6,6 +6,7 @@ import android.util.AttributeSet
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
 import ru.sample.domain.entity.ShortBankEntity
+import ru.sample.presentation.view.adapter.BanksPagerAdapter
 
 class GradationViewPager : ViewPager {
 

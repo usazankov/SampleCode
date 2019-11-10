@@ -59,6 +59,14 @@ abstract class BaseFragment : MvpAndroidxFragment() {
         rl_progress = v.findViewById(R.id.rl_progress)
     }
 
+    protected fun showProgressBarLoading() {
+        this.rl_progress?.setVisibility(View.VISIBLE)
+    }
+
+    protected fun hideProgressBarLoading() {
+        this.rl_progress?.setVisibility(View.GONE)
+    }
+
     private val toolbarBackButtonListener = View.OnClickListener { activity?.onBackPressed() }
 
     protected fun setTitleToolBar(resId: Int) {

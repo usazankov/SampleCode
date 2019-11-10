@@ -8,6 +8,7 @@ import ru.sample.presentation.R
 import ru.sample.presentation.internal.di.HasComponent
 import ru.sample.presentation.internal.di.components.DaggerSoftPosComponent
 import ru.sample.presentation.internal.di.components.SoftPosComponent
+import ru.sample.presentation.view.fragment.BankDetailsFragment
 import ru.sample.presentation.view.fragment.SelectBankFragment
 
 class SelectBankActivity : BaseActivity(), HasComponent<SoftPosComponent>,
@@ -38,7 +39,7 @@ class SelectBankActivity : BaseActivity(), HasComponent<SoftPosComponent>,
     }
 
     override fun onBankClicked(bankModel: ShortBankEntity) {
-//        replaceFragment(R.id.fragmentContainer, BankDetailsFragment.forBankId(bankModel.getId()))
+        replaceFragment(R.id.fragmentContainer, BankDetailsFragment.forBankId(bankModel.id))
     }
 //
 //    fun onIssueClick(bankId: Int) {

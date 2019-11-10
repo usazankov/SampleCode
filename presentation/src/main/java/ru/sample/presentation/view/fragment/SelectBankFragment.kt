@@ -6,10 +6,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.PresenterType
-import com.arellomobile.mvp.presenter.ProvidePresenter
+import kotlinx.android.synthetic.main.fragment_select_bank.*
 
 import javax.inject.Inject
 
@@ -26,17 +25,15 @@ class SelectBankFragment : BaseFragment(), SelectBankView {
 
     private var bankListListener: BankListListener? = null
 
-    @InjectPresenter(type = PresenterType.GLOBAL)
+    @InjectPresenter(type = PresenterType.LOCAL)
     lateinit var selectBankPresenter: SelectBankPresenter
 
     @Inject
     lateinit var banksAdapter: BanksAdapter
 
-    private lateinit var rv_banks: RecyclerView
-
     private val itemClickListener = object : BanksAdapter.OnItemClickListener {
-        override fun onBankItemClicked(userModel: ShortBankEntity) {
-//            selectBankPresenter!!.onUserClicked(userModel)
+        override fun onBankItemClicked(shortBankEntity: ShortBankEntity) {
+            selectBankPresenter.selectBank(shortBankEntity)
         }
     }
 
@@ -49,7 +46,7 @@ class SelectBankFragment : BaseFragment(), SelectBankView {
     }
 
     override fun onClickRetry() {
-        //selectBankPresenter!!.initialize()
+        selectBankPresenter.initialize()
     }
 
     override fun onAttach(activity: Activity) {
@@ -67,7 +64,6 @@ class SelectBankFragment : BaseFragment(), SelectBankView {
         savedInstanceState: Bundle?
     ): View {
         val fragmentView = inflater.inflate(R.layout.fragment_select_bank, container, false)
-        setupViews(fragmentView)
         initToolBar(fragmentView, inflater)
         initProgressBar(fragmentView)
         setTitleToolBar(R.string.title_list_banks)
@@ -78,6 +74,7 @@ class SelectBankFragment : BaseFragment(), SelectBankView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupViews()
         initialize()
     }
 
@@ -89,21 +86,20 @@ class SelectBankFragment : BaseFragment(), SelectBankView {
         banksAdapter.setBanksCollection(bankEntityList)
     }
 
-    private fun setupViews(view: View) {
-        rv_banks = view.findViewById(R.id.rv_banks)
+    private fun setupViews() {
         banksAdapter.setOnItemClickListener(itemClickListener)
         val spanCount = 2
         val spacing = 12
         val includeEdge = false
-        this.rv_banks.setLayoutManager(BanksLayoutManager(context(), spanCount))
-        this.rv_banks.addItemDecoration(
+        rv_banks.setLayoutManager(BanksLayoutManager(context(), spanCount))
+        rv_banks.addItemDecoration(
             GridSpacingItemDecoration(
                 spanCount,
                 spacing,
                 includeEdge
             )
         )
-        this.rv_banks.setAdapter(banksAdapter)
+        rv_banks.setAdapter(banksAdapter)
     }
 
     override fun viewBankDetails(bankEntity: ShortBankEntity) {
@@ -111,11 +107,11 @@ class SelectBankFragment : BaseFragment(), SelectBankView {
     }
 
     override fun showLoading() {
-        rl_progress?.setVisibility(View.VISIBLE)
+        showProgressBarLoading()
     }
 
     override fun hideLoading() {
-        rl_progress?.setVisibility(View.GONE)
+        hideProgressBarLoading()
     }
 
     override fun showRetry(message: String) {

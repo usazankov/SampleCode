@@ -15,10 +15,10 @@ android {
     }
     buildTypes {
         debug{
-            buildConfigField 'String', 'BASE_URL', '"https://10.129.106.130:8443"'
+            buildConfigField 'String', 'BASE_URL', '"https://185.8.182.93:8443"'
         }
         release {
-            buildConfigField 'String', 'BASE_URL', '"https://10.129.106.130:8443"'
+            buildConfigField 'String', 'BASE_URL', '"https://185.8.182.93:8443"'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -45,6 +45,7 @@ dependencies {
     implementation 'com.arello-mobile:moxy-android:1.4.5'
     implementation 'com.arello-mobile:moxy-app-compat:1.4.5'
     kapt 'com.arello-mobile:moxy-compiler:1.4.5'
+    implementation 'com.pawegio.kandroid:kandroid:0.5.0@aar'
 
     //implementation 'com.arello-mobile:moxy-android:1.5.5'
 

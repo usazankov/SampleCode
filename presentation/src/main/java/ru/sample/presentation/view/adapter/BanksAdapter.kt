@@ -31,7 +31,7 @@ class BanksAdapter @Inject constructor(private val context: Context, private val
     private var onItemClickListener: OnItemClickListener? = null
 
     interface OnItemClickListener {
-        fun onBankItemClicked(userModel: ShortBankEntity)
+        fun onBankItemClicked(shortBankEntity: ShortBankEntity)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BankViewHolder {
