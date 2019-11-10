@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.view.*
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
@@ -192,6 +193,17 @@ class BankDetailsFragment : BaseFragment(), BankDetailsView{
         )
         layoutParams.bottomMargin = Utils.getNavigationBarHeight()
         rl_bank_details.setLayoutParams(layoutParams)
+        val m = context().getSystemService(Context.WINDOW_SERVICE) as? WindowManager
+        if (m != null) {
+            val metrics = DisplayMetrics()
+            m.defaultDisplay.getMetrics(metrics)
+            val heightDp = Utils.pxToDp(metrics.heightPixels.toFloat())
+            val layoutParamsPager = FrameLayout.LayoutParams(
+                RelativeLayout.LayoutParams.MATCH_PARENT,
+                Utils.dpToPx((heightDp/2).toInt())
+            )
+            rl_pager.layoutParams = layoutParamsPager
+        }
 
         val viewTreeObserver = fl_main.viewTreeObserver
         viewTreeObserver.addOnGlobalLayoutListener(object :
