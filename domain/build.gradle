@@ -25,12 +25,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation dataDependencies.gson
-    implementation dataDependencies.javaxInject
-    implementation dataDependencies.rxJava
-    implementation dataDependencies.rxAndroid
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.2.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation domainDependencies.kotlin
+    implementation domainDependencies.gson
+    implementation domainDependencies.javaxInject
+    implementation domainDependencies.rxJava
 }

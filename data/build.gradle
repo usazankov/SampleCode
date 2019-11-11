@@ -26,27 +26,23 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.1.0'
+    implementation dataDependencies.kotlin
+    implementation dataDependencies.androidxAppCompat
+    implementation dataDependencies.androidxCoreKtx
     implementation dataDependencies.gson
     implementation dataDependencies.javaxInject
     implementation dataDependencies.rxJava
     implementation dataDependencies.rxAndroid
-    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
-    implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+    implementation dataDependencies.retrofit
+    implementation dataDependencies.retrofitGson
+    implementation dataDependencies.retrofitRx
     testImplementation dataTestDependencies.junit
     testImplementation dataTestDependencies.assertj
-    testImplementation 'org.mockito:mockito-core:2.19.0'
-    testImplementation 'org.mockito:mockito-inline:2.8.9'
-    testImplementation 'com.nhaarman:mockito-kotlin-kt1.1:1.6.0'
-    testImplementation 'junit:junit:4.12'
-    testImplementation 'com.squareup.okhttp3:mockwebserver:3.10.0'
+    testImplementation dataTestDependencies.mockito
+    testImplementation dataTestDependencies.mockitoInline
+    testImplementation dataTestDependencies.mockitoKotlin
+    testImplementation dataTestDependencies.mockitoWebServer
     testImplementation dataTestDependencies.robolectric
     compileOnly project(":domain")
-    testImplementation 'junit:junit:4.12'
     testCompileOnly project(":domain")
-    androidTestImplementation 'androidx.test:runner:1.2.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }

@@ -17,7 +17,6 @@ public class DiskBankDataStoreTest {
     @Mock
     private IBanksCache mockBankCache;
 
-
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
