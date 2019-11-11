@@ -1,4 +1,4 @@
-package ru.sample.data
+package ru.sample.data.net
 
 class ServiceDescrRespnonse{
     companion object{
@@ -7,7 +7,7 @@ class ServiceDescrRespnonse{
         val logoUrl = "logo.png"
         val name = "SoftPos"
         val phone = "+7 (111) 222 3333"
-        val JSON_SERVICE_DESCR: String = "{\"coverUrl\":\"${coverUrl}\",\"description\":\"${descr}\",\"logoUrl\":\"${logoUrl}\",\"name\":\"${name}\",\"technicalSupportPhone\":\"${phone}\"}"
+        val JSON_SERVICE_DESCR: String = "{\"coverUrl\":\"$coverUrl\",\"description\":\"$descr\",\"logoUrl\":\"$logoUrl\",\"name\":\"$name\",\"technicalSupportPhone\":\"$phone\"}"
     }
 }
 
@@ -27,7 +27,7 @@ class BankListResponse{
         val shortName_2 = "Тинькофф"
         val smallIcon_2 = "https://10.129.106.130:8443/softpos/images/logo_tinkoff_small.png"
 
-        val JSON_BANK_LIST: String = "[{\"color\":\"${color_1}\",\"coverUrl\":\"${coverUrl_1}\",\"fullName\":\"${fullName_1}\",\"id\":${id_1},\"shortName\":\"${shortName_1}\",\"smallIconUrl\":\"${smallIcon_1}\"},{\"color\":\"${color_2}\",\"coverUrl\":\"${coverUrl_2}\",\"fullName\":\"${fullName_2}\",\"id\":${id_2},\"shortName\":\"${shortName_2}\",\"smallIconUrl\":\"${smallIcon_2}\"}]"
+        val JSON_BANK_LIST: String = "[{\"color\":\"$color_1\",\"coverUrl\":\"$coverUrl_1\",\"fullName\":\"$fullName_1\",\"id\":$id_1,\"shortName\":\"$shortName_1\",\"smallIconUrl\":\"$smallIcon_1\"},{\"color\":\"$color_2\",\"coverUrl\":\"$coverUrl_2\",\"fullName\":\"$fullName_2\",\"id\":$id_2,\"shortName\":\"$shortName_2\",\"smallIconUrl\":\"$smallIcon_2\"}]"
     }
 }
 
@@ -53,6 +53,6 @@ class BankDescrRespnonse{
         val name5 = "Стоимость одного платежного поручения"
         val val5 = "5Р"
         val countTariff = 5
-        val JSON_BANK_DESCR = "{\"offer\":\"${offer}\",\"tariffs\":[{\"name\":\"${name1}\",\"value\":\"${val1}\"},{\"name\":\"${name2}\",\"value\":\"${val2}\"},{\"name\":\"${name3}\",\"value\":\"${val3}\"},{\"name\":\"${name4}\",\"value\":\"${val4}\"},{\"name\":\"${name5}\",\"value\":\"${val5}\"}],\"textFullTariffs\":\"${textUrl}\",\"urlFullTariffs\":\"${url}\",\"color\":\"${color}\",\"coverUrl\":\"${coverUrl}\",\"fullName\":\"${fullName}\",\"id\":${id},\"smallIconUrl\": \"${smallIconUrl}\", \"shortName\": \"${shortName}\"}"
+        val JSON_BANK_DESCR = "{\"offer\":\"$offer\",\"tariffs\":[{\"name\":\"$name1\",\"value\":\"$val1\"},{\"name\":\"$name2\",\"value\":\"$val2\"},{\"name\":\"$name3\",\"value\":\"$val3\"},{\"name\":\"$name4\",\"value\":\"$val4\"},{\"name\":\"$name5\",\"value\":\"$val5\"}],\"textFullTariffs\":\"$textUrl\",\"urlFullTariffs\":\"$url\",\"color\":\"$color\",\"coverUrl\":\"$coverUrl\",\"fullName\":\"$fullName\",\"id\":$id,\"smallIconUrl\": \"$smallIconUrl\", \"shortName\": \"$shortName\"}"
     }
 }

@@ -1,4 +1,4 @@
-package ru.sample.data
+package ru.sample.data.net
 
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import okhttp3.mockwebserver.MockResponse
@@ -12,7 +12,6 @@ import org.mockito.runners.MockitoJUnitRunner
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-import ru.sample.data.net.SoftPosApi
 import ru.sample.domain.entity.FullBankEntity
 import ru.sample.domain.entity.ItemTariff
 import ru.sample.domain.entity.ServiceDescriptionEntity
@@ -57,9 +56,15 @@ class SoftPosApiTest {
         assertEquals(req.method, get)
         assertEquals(req.path, "/softpos/info")
         assertNotNull(serviceDescr)
-        assertEquals(serviceDescr?.coverUrl, ServiceDescrRespnonse.coverUrl)
-        assertEquals(serviceDescr?.description, ServiceDescrRespnonse.descr)
-        assertEquals(serviceDescr?.logoUrl, ServiceDescrRespnonse.logoUrl)
+        assertEquals(serviceDescr?.coverUrl,
+            ServiceDescrRespnonse.coverUrl
+        )
+        assertEquals(serviceDescr?.description,
+            ServiceDescrRespnonse.descr
+        )
+        assertEquals(serviceDescr?.logoUrl,
+            ServiceDescrRespnonse.logoUrl
+        )
         assertEquals(serviceDescr?.name, ServiceDescrRespnonse.name)
         assertEquals(serviceDescr?.phone, ServiceDescrRespnonse.phone)
     }
@@ -114,12 +119,18 @@ class SoftPosApiTest {
         assertNotNull(bankDescr)
         assertEquals(bankDescr?.coverUrl, BankDescrRespnonse.coverUrl)
         assertEquals(bankDescr?.fullName, BankDescrRespnonse.fullName)
-        assertEquals(bankDescr?.shortName, BankDescrRespnonse.shortName)
+        assertEquals(bankDescr?.shortName,
+            BankDescrRespnonse.shortName
+        )
         assertEquals(bankDescr?.color, BankDescrRespnonse.color)
         assertEquals(bankDescr?.id, BankDescrRespnonse.id)
         assertEquals(bankDescr?.offer, BankDescrRespnonse.offer)
-        assertEquals(bankDescr?.smallIconUrl, BankDescrRespnonse.smallIconUrl)
-        assertEquals(bankDescr?.textFullTariffs, BankDescrRespnonse.textUrl)
+        assertEquals(bankDescr?.smallIconUrl,
+            BankDescrRespnonse.smallIconUrl
+        )
+        assertEquals(bankDescr?.textFullTariffs,
+            BankDescrRespnonse.textUrl
+        )
         assertEquals(bankDescr?.urlFullTariffs, BankDescrRespnonse.url)
         val tariffs: List<ItemTariff>? = bankDescr?.tariffs
         assertEquals(tariffs?.size, BankDescrRespnonse.countTariff)
